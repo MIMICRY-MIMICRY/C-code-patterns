@@ -54,6 +54,7 @@ while (i < n)
     while (j < m) { j++; }
 do { } while (condition);
 do i++; while (i < n);          // pojedyncza instrukcja jako ciało
+do { } while (0);                // klasyczny idiom w makrach wieloliniowych
 struct Point p;
 while (p) { }    // BŁĄD — nieskalarny typ
 break;
