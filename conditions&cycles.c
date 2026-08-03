@@ -2,6 +2,10 @@ if (condition) { }
 if (variable / value operation variable / value) { ... }
 if (variable == NULL) / if (variable) / if (*variable)
 if (FUNC() == 0 / FUNC() != ...)
+if (FUNC() operation variable / value)
+if (FUNC() operation variable / value operation FUNC() operation variable / value)
+if (FUNC(variable) operation variable / value operation FUNC(variable) operation variable / value)
+if (FUNC(variable[index]) operation variable / value operation FUNC(variable[index]) operation variable / value)
 if (variable = 5)
 if (variable = FUNC() != 0)
 if (variable = value, variable = value, variable operation variable)
@@ -12,12 +16,29 @@ if (FUNC(n))
 #if defined(DEBUG)
   if (1) { ... }
 #endif
+if () { if () }
 else if (condition) { }
+else if (x == 5)
+else if (x > 0 && x < 100)
+else if (!flag)
+else if (ptr != NULL)
+else if (strcmp(s, "abc") == 0)
+else if ((x = compute()) != 0)      // przypisanie jako warunek
+else if (x)                          // niejawna konwersja do bool-like
+else if (a, b, c)                    // operator przecinkowy — wynik to `c`
+else if () { if () }
 ...
 else { }
+else
+  for (...) { }
+else switch(variable) { case 1: break; }
+else
+  goto cleanup;
+else { ; }
 ...
 switch (...) {
   case 1: /* ... */ break;
+  case 1: /* ... */ continue;
   default: /* ... */
 }
 for (int i = 0; i < n; i++) { }
@@ -57,8 +78,8 @@ do i++; while (i < n);          // pojedyncza instrukcja jako ciało
 do { } while (0);                // klasyczny idiom w makrach wieloliniowych
 struct Point p;
 while (p) { }    // BŁĄD — nieskalarny typ
-break;
-continue;
-goto label;
-label: ;
-return value;
+break; // przerwanie
+continue; // kontynuowanie nastepny krok
+goto label; // przerwanie i przeskok do wskazanego miejsca
+label: ; // wskazane miejsce dla goto
+return value; // zwraca cos albo nic
