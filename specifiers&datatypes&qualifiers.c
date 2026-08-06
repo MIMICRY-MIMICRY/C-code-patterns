@@ -100,18 +100,39 @@ void
 volatile
 while
 wchar_t
-__attribute__
-_Atomic int a;
-_Alignas
-_Alignof
-_Atomic
-_Bool b;
-_BitInt
-_Decimal32
-_Decimal64
-_Decimal128
-_Generic
-_Noreturn
-_Static_assert
-__typeof__
-_Thread_local
+__attribute__ // compiler gcc specific extensions
+_Atomic int a; // compiler gcc specific extensions
+_Alignas // compiler gcc specific extensions
+_Alignof // compiler gcc specific extensions
+_Atomic // compiler gcc specific extensions
+_Bool b; // compiler gcc specific extensions
+_BitInt // compiler gcc specific extensions
+_Decimal32 // compiler gcc specific extensions
+_Decimal64 // compiler gcc specific extensions
+_Decimal128 // compiler gcc specific extensions
+_Generic // compiler gcc specific extensions
+_Noreturn // compiler gcc specific extensions
+_Static_assert // compiler gcc specific extensions
+__typeof__ // compiler gcc specific extensions
+_Thread_local // compiler gcc specific extensions
+%d //signed decimal integer
+%i //signed decimal integer
+%o // unsigned octal integer
+%u // unsigned decimal integer
+%x // unsigned hexadecimal (small letter)
+%X // unsigned hexadecimal (capital letter)
+%f // integer including decimal point
+%e // signed floating point (using e notation)
+%E // signed floating point (using E notation)
+%g // the shorter between %f and %e
+%G // the shorter between %f and %E
+%c // character
+%s // string
+%p // pointer
+%% // prints % character
+%ld or %li // Long
+%lf // Double
+%Lf // Long double
+%lu // unsigned int or unsigned long
+%li or %lid // Long long
+%llu // unsigned long long
