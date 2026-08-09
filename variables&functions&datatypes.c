@@ -3,6 +3,9 @@ modifier variable = value
 operators variable = value
 qualificator variable = value
 
+operators specifier variable = value
+operators specifier function(variable)
+
 specifier variable = value
 specifier specifier variable = value
 specifier qualificator variable = value
