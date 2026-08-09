@@ -1,36 +1,40 @@
-auto
-alignof
-alignas
-break
-bool
-case
-char
-char8_t
-char16_t
-char32_t
-const
-continue
+auto // allowed only for objects declared at block scope. Defaults - automatic storage duration & no linkage.
+alignof // 
+alignas //
+break // the enclosing loop or switch
+bool //
+case // 
+char // character UTF-16 & UTF-32
+char8_t // UTF-8 unsigned integer type
+char16_t // UTF-16 unsigned integer type
+char32_t // UTF-32 unsigned integer type
+const // placed read-only memory by the compiler. If the address of a const never taken - not be stored at all. Non-const (converted)-> pointer const (same & compatible type)
+continue // introduce to next step of loop
 clock_t
-constexpr double
+constexpr double // 
 consteval
 constinit
-constexpr
-default
-do
-double
+constexpr // Linkage appropraite to its declarations & exist at runtime to its address taken. Compiler use -> any other constant expression. Is checked at compile time. Float-point -> evaluated float-point envinroment.
+constexpr pointers
+constexpr atomic types
+constexpr volatile types
+constexpr restrict pointers
+default // 
+do //
+double // Declaration of two types compatible. 
 double _Complex
 double const
 decltype(auto)
-else
-enum
-extern
-float
+else //
+enum //
+extern // Static duration and external linkage (unless already declared internal). Used with variable & function declaration in both file and block scope. Declared remains internal. Otherwise no-linkage & no scope -> linkage is external.
+float //
 float _Complex
 for
 goto
 if
-inline
-int
+inline // Compiler can and usually do ignore presence or absence (inline specifier) for the purpose of optimization. Avoiding the overhead of a function call - replace call with its body. 
+int //
 int8_t i8
 int8_t
 int16_t
@@ -48,38 +52,42 @@ int_fast32_t
 int_fast64_t
 int_fast*_t
 intptr_t
-long
+long // will doing longer default structures.
+long double
 long double _Complex
-nullptr
+nullptr // non-lvalue constant can be converted to a pointer types or bool.
 off_t
 ptrdiff_t
 printf
-register
-return
-restrict
-short
-size_t
-signed
-sizeof
-static
-struct
+register // Allowed for declared at block scope including func parameter lists. Automatic storage duration & no linkage. Additionaly hints the optimizer to store the value of this variable in the cpu register if possible. Cannot address-of operator & alignas & register arrays not (convertible) to pointers
+return // Zwraca wartosci
+restrict // Compiler is free to ignore any or all aliasing implications "uses restrict". Avoid restrict-qualified pointers are not violated.
+short // Will be shorter all types
+size_t //
+signed //
+signed char
+sizeof // return the size in bytes. 
+static //
+struct //
 switch
 std::nullptr_t
 std::byte
-static
-static_assert
-static inline
-ssize_t
-sig_atomic_t
+static //
+static_assert //
+static inline //
+ssize_t //
+sig_atomic_t //
 scanf
-type
-typedef
-typeof
+type //
+typedef // cannot be static or extern.
+typeof // 
 typeof_unqual
 time_t
 thread_local
-union
-unsigned
+union //
+unsigned //
+unsigned char
+uchar_t
 uint
 uint8_t u8
 uint8_t
@@ -96,8 +104,8 @@ uint_fast32_t
 uint_fast64_t
 uintmax_t
 uintptr_t
-void
-volatile
+void //
+volatile //
 while
 wchar_t
 __attribute__ // compiler gcc specific extensions
