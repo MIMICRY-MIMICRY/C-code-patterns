@@ -2,36 +2,37 @@ auto // allowed only for objects declared at block scope. Defaults - automatic s
 alignof // 
 alignas //
 break // the enclosing loop or switch
-bool //
-case // 
+bool // Holding the two value true & false. 0.5 valuates to true.
+case // Executed according to an integral value.
+complex // Required header. Declared complex numbers.
 char // character UTF-16 & UTF-32
 char8_t // UTF-8 unsigned integer type
 char16_t // UTF-16 unsigned integer type
 char32_t // UTF-32 unsigned integer type
 const // placed read-only memory by the compiler. If the address of a const never taken - not be stored at all. Non-const (converted)-> pointer const (same & compatible type)
 continue // introduce to next step of loop
-clock_t
-constexpr double // 
-consteval
-constinit
+clock_t //
+constexpr double // Two compatible types compile time.
+consteval // Declares a function or function template to be an immediate function. (directly or indirectly) produce a compile time constant expression. An immediate function is a constexpr function, subject to its requirements as the case may be.
+constinit // Declares a variable with static or thread storage duration. Be applied to structured binding declarations. Is also applied to the uniquely-named variable introduced by the declaration.
 constexpr // Linkage appropraite to its declarations & exist at runtime to its address taken. Compiler use -> any other constant expression. Is checked at compile time. Float-point -> evaluated float-point envinroment.
-constexpr pointers
-constexpr atomic types
-constexpr volatile types
-constexpr restrict pointers
+constexpr pointers //
+constexpr atomic types //
+constexpr volatile types //
+constexpr restrict pointers //
 default // 
 do //
 double // Declaration of two types compatible. 
-double _Complex
-double const
-decltype(auto)
+double _Complex //
+double const //
+decltype(auto) //
 else //
 enum //
 extern // Static duration and external linkage (unless already declared internal). Used with variable & function declaration in both file and block scope. Declared remains internal. Otherwise no-linkage & no scope -> linkage is external.
 float //
 float _Complex
 for
-goto
+goto //
 if
 inline // Compiler can and usually do ignore presence or absence (inline specifier) for the purpose of optimization. Avoiding the overhead of a function call - replace call with its body. 
 int //
@@ -69,7 +70,7 @@ signed char
 sizeof // return the size in bytes. 
 static //
 struct //
-switch
+switch //
 std::nullptr_t
 std::byte
 static //
@@ -80,16 +81,16 @@ sig_atomic_t //
 scanf
 type //
 typedef // cannot be static or extern.
-typeof // 
-typeof_unqual
-time_t
+typeof // return name data type of operand. Without conversions are applied to expression.
+typeof_unqual // 
+time_t //
 thread_local
-union //
-unsigned //
-unsigned char
-uchar_t
-uint
-uint8_t u8
+union // The value of at most one members can be stored in a union at any one time. Struct prawie = union (tylko inaczej).
+unsigned // Przechowywanie wartosci ujemnych.
+unsigned char //
+uchar_t //
+uint //
+uint8_t u8 //
 uint8_t
 uint16_t
 uint32_t
@@ -104,10 +105,10 @@ uint_fast32_t
 uint_fast64_t
 uintmax_t
 uintptr_t
-void //
-volatile //
-while
-wchar_t
+void // Typ ktory nie zwraca zadnej wartosci. Tylko wykonuje.
+volatile // Wylacza optymalizacje. Czas trwania jest wydluzony.
+while //
+wchar_t //
 __attribute__ // compiler gcc specific extensions
 _Atomic int a; // compiler gcc specific extensions
 _Alignas // compiler gcc specific extensions
