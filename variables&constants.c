@@ -14,10 +14,10 @@ int ... float double long bool char
 
 signed & unsigned & short int ... float double long bool char
 
-typeof int ... float double long bool char ... signed & unsigned & short
-typeof_unqual int ... float double long bool char ... signed & unsigned & short
-typedef int ... float double long bool char ... signed & unsigned & short
-sizeof int ... float double long bool char ... signed & unsigned & short
+typeof ... int ... float double long bool char ... signed & unsigned & short
+typeof_unqual ... int ... float double long bool char ... signed & unsigned & short
+typedef ... int ... float double long bool char ... signed & unsigned & short
+sizeof ... int ... float double long bool char ... signed & unsigned & short
 
 void int ... float double long bool char ... signed & unsigned & short
 
