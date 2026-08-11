@@ -14,15 +14,20 @@ int ... float double long bool char
 
 signed & unsigned & short int ... float double long bool char
 
-typeof ... int ... float double long bool char ... signed & unsigned & short
-typeof_unqual ... int ... float double long bool char ... signed & unsigned & short
-typedef ... int ... float double long bool char ... signed & unsigned & short
-sizeof ... int ... float double long bool char ... signed & unsigned & short
+typeof ... void int ... float double long bool char ... signed & unsigned & short
+typeof_unqual ... void int ... float double long bool char ... signed & unsigned & short
+typedef ... void int ... float double long bool char ... signed & unsigned & short
+sizeof ... void int ... float double long bool char ... signed & unsigned & short
 
-void int ... float double long bool char ... signed & unsigned & short
+void int ... float double long bool char ... signed & unsigned & short ...
 
-inline
+inline auto ... const ... typeof ... void ... signed & unsigned & short int ... float double long bool char
 
 nullptr
 enum
+
+void & sizeof int signed & unsigned & short & double & long & long
+void & sizeof float signed & unsigned & short & double & long & long
+void & sizeof bool
+void & sizeof char short & long & long
 
