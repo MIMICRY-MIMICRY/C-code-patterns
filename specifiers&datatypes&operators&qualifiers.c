@@ -25,6 +25,8 @@ do //
 double // Declaration of two types compatible. 
 double _Complex //
 double const //
+double long
+double long long
 decltype(auto) //
 else //
 enum //
