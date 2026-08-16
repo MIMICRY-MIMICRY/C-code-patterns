@@ -69,3 +69,42 @@ clean:
 
 # These rules do not correspond to a specific file
 .PHONY: build clean
+--------------------------------------------------------------------------
+x:=foo
+y:=$(x) bar # equivalent to y:=foo later
+x:=later
+ifeq ($(strip $(foo)),)
+text-if-empty
+endif
+bar = true
+foo = bar
+ifdef $(foo)
+frobozz = yes
+endif
+bar =
+foo = $(bar)
+ifdef foo
+frobozz = yes
+else
+frobozz = no
+endif
+foo =
+ifdef foo
+frobozz = yes
+else
+frobozz = no
+endif
+conditional-directive-one #
+text-if-one-is-true
+else conditional-directive-two
+text-if-two-is-true
+else
+text-if-one-and-two-are-false
+endif
+--------------------------------------------------------------------------
+najwazniejsze syntaxyczne slowa kluczowe
+VARIABLE = VALUE (flags compilation & name of files & directories)
+docelowy plik : pliki
+warunek pusty : nazwa programu
+map = $(foreach a,$(2),$(call $(1),$(a)))
+o = $(call map,origin,o map MAKE)
