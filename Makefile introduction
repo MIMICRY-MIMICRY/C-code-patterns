@@ -6,6 +6,7 @@ $(VARIABLE)
 
 VARIABLE = flag compile + name of files
 VARIABLE := $(...) file.o
+VARIABLE ?= $(...)
 VARIABLE ::= more & $(...)
 VARIABLE += more
 --------------------------------------------------------------------------------------------------------
