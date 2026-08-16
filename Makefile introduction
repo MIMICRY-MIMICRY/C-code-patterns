@@ -108,3 +108,64 @@ docelowy plik : pliki
 warunek pusty : nazwa programu
 map = $(foreach a,$(2),$(call $(1),$(a)))
 o = $(call map,origin,o map MAKE)
+--------------------------------------------------------------------------
+echo >&2 "***"; \
+echo >&2 "*** The source tree is not clean, please run 'make$(if $(findstring command line, $(origin ARCH)), ARCH=$(ARCH)) mrproper'"; \
+echo >&2 "*** in $(abs_srctree)";\
+echo >&2 "***"; \
+false; \
+fi
+
+echo >&2 "*** Please run 'make -C $(abs_srctree) M=$(realpath $(srcroot)) clean'";
+
+echo "export KBUILD_EXTMOD = $(realpath $(srcroot))" ;
+
+export CLIPPY_CONF_DIR := $(srctree)
+
+export ARCH SRCARCH CONFIG_SHELL BASH HOSTCC KBUILD_HOSTCFLAGS CROSS_COMPILE LD CC HOSTPKG_CONFIG
+
+unexport GREP_OPTIONS
+
+ifeq ($(filter output-sync,$(.FEATURES)),)
+$(error GNU Make >= 4.0 is required. Your Make version is $(MAKE_VERSION))
+endif
+
+VARIABLE = $($wildcard %, , , )
+
+PHONY += scripts
+scripts: scripts_basic scripts_dtc
+	$(Q)$(MAKE) $(build)=$(@)
+
+immediate = deferred
+immediate ?= deferred
+immediate := immediate
+immediate += deferred or immediate
+
+define immediate
+  deferred
+endef
+
+immediate : immediate ; deferred
+	deferred
+ 	
+targets : normal-prerequisites | order-only-prerequisites
+
+CC = gcc
+CFLAGS = -Wall -O2
+SRC = main.c utils.c
+OBJDIR = build
+OBJ = $(SRC:%.c=$(OBJDIR)/%.o)
+
+all: $(OBJDIR)/app
+
+$(OBJDIR)/app: $(OBJ) | $(OBJDIR)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)
+
+$(OBJDIR)/%.o: %.c | $(OBJDIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
+clean:
+	rm -rf $(OBJDIR)
