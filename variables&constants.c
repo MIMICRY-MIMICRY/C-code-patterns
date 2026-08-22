@@ -169,6 +169,7 @@ register
 static 
 extern 
 const 
+const int
 constexpr 
 constexpr double ...
 consteval ...
@@ -177,7 +178,10 @@ constexpr pointers ... *pointer = &adress of variable ... *pointer
 constexpr atomic types ...
 constexpr volatile types ...
 constexpr restrict pointers ... *pointer = &adress of variable ... *pointer
-volatile 
+volatile
+volatile struct
+volatile int
+volatile const int
 restrict 
 enum 
 
