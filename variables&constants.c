@@ -106,6 +106,8 @@ long
 long long
 long int
 long long int
+long double
+long long double
 short
 int8_t i8
 ...
