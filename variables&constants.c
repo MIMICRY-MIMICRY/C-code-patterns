@@ -160,6 +160,7 @@ char_fast8_t ui8_fast;
 ...
 char_fast*_t i8_fast_least;
 ...
+wchar_t
 
 auto 
 register 
