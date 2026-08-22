@@ -76,12 +76,36 @@ uchar_t
 
 typedef typeof((int*)nullptr - (int*)nullptr) ptrdiff_t;
 
+alignas  do   int  struct  while
+alignof  double  long  switch  _Atomic
+auto  else  nullptr  thread_local  _BitInt
+bool  enum  register  true  _Complex
+break  extern  restrict  typedef  _Decimal128
+case  false  return  typeof  _Decimal32
+char  float  short  typeof_unqual  _Decimal64
+const  for  signed  union  _Generic
+constexpr  goto  sizeof  unsigned  _Imaginary
+continue  if  static  void  _Noreturn
+default  inline  static_assert  volatile
+
+Keyword  Alternative Spelling
+alignas  _Alignas
+alignof  _Alignof
+bool  _Bool
+static_assert  _Static_assert
+thread_local  _Thread_local
+
 int
 float
 double
+double long
+double long long
 bool
 char
 long
+long long
+long int
+long long int
 short
 int8_t i8
 ...
@@ -154,6 +178,11 @@ volatile
 restrict 
 enum 
 
+signed
+unsigned
+unsigned int
+unsigned long int
+usigned long long int
 typeof
 typeof_unqual
 typedef
@@ -165,3 +194,11 @@ static_assert ...
 static inline ...
 size_t ...
 ssize_t ...
+inline
+nullptr
+union
+struct
+static_assert
+static inline
+void
+ptrdiff_t
