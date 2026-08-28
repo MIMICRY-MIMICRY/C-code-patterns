@@ -55,3 +55,6 @@ union functions
 } function();
 
 void function(void){};
+
+address -> replace & allocate
+value -> change e. move bits in left or right or change & replace
