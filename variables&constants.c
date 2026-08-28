@@ -164,48 +164,72 @@ char_fast*_t i8_fast_least;
 ...
 wchar_t
 
-auto 
-register 
-static 
-extern 
-const 
-const int
-constexpr 
+auto // Automatic storage duration (C) or type deduction (C++11).
+register // Obsolete hint to store variable in a CPU register (removed in C++17)
+static // Gives static storage duration and internal linkage (file scope) or class-wide scope.
+extern // Declares a variable with external linkage, defined elsewhere.
+const // Declares a read‑only (immutable) variable.
+const int 
+constexpr // Specifies that a value/function must be evaluated at compile time (C++11).
 constexpr double ...
-consteval ...
-constinit ...
+consteval ... // Declares an immediate function, called only at compile time (C++20).
+constinit ... // Asserts that a variable is initialized at compile time (C++20).
 constexpr pointers ... *pointer = &adress of variable ... *pointer
 constexpr atomic types ...
 constexpr volatile types ...
 constexpr restrict pointers ... *pointer = &adress of variable ... *pointer
-volatile
-volatile struct
+volatile // Prevents compiler optimizations; value may change unexpectedly (hardware, interrupts).
+volatile struct 
 volatile int
 volatile const int
-restrict 
-enum 
+restrict // C99 qualifier; promises that the pointer does not alias others (optimisation hint).
+enum // Defines an enumerated type with a set of named constants.
 
-signed
-unsigned
+signed // Explicitly allows negative values for integral types (default for int).
+unsigned // Disallows negative values; range starts at 0.
 unsigned int
 unsigned long int
 usigned long long int
-typeof
-typeof_unqual
-typedef
-sizeof
-union
-struct
-static ...
-static_assert ...
-static inline ...
-size_t ...
-ssize_t ...
-inline
-nullptr
+typeof // GCC/clang extension (now C23) to get the type of an expression.
+typeof_unqual // C23: typeof but removes const/volatile/restrict qualifiers.
+typedef // Creates an alias for an existing type.
+sizeof // Compile‑time operator returning size in bytes of a type/object.
+union // A type where members share the same memory location.
+struct // A composite type with separate memory for each member.
+static ... // General placeholder for static applied to variables, functions, or members.
+static_assert ... // Compile‑time assertion; fails if condition is false (C++11/C11).
+static inline ... // Inline function with internal linkage (local to translation unit).
+size_t ... // Unsigned integer type, result of sizeof (standard C/C++).
+ssize_t ... // Signed integer type for sizes/counts (POSIX; can hold -1 for errors).
+inline // Suggests that the compiler should expand the function in place.
+nullptr // Type‑safe null pointer literal (C++11).
 union
 struct
 static_assert
 static inline
-void
-ptrdiff_t
+void // Represents “no type” — used for functions returning nothing or generic pointers (void*).
+ptrdiff_t // Signed integer type for the result of subtracting two pointers.
+
+
+
+
+Type Specifiers
+Podstawowe: char, int, float, double, void.
+Znakowe i wielkościowe: signed, unsigned, short, long.
+Złożone i własne: struct, union, enum, typedef.
+Nowsze standardy (C99+): _Bool (w nagłówku jako bool), _Complex, _Atomic.
+Type Qualifiers
+const – oznacza, że wartość jest tylko do odczytu (Twoja konstanta).
+volatile – informuje kompilator, że wartość może zmienić się nagle (np. przez sprzęt), więc kompilator nie może jej optymalizować.
+restrict (od C99) – wskazówka dla kompilatora, że dany wskaźnik jest jedynym, który odnosi się do danego obszaru pamięci (pomaga w optymalizacji).
+_Atomic (od C11) – oznacza, że operacje na zmiennej są niepodzielne (współbieżność).
+Storage Class Specifiers
+auto – domyślna zmienna lokalna na stosie (rzadko używane słowo kluczowe).
+register – sugestia dla kompilatora, by trzymać zmienną w rejestrze procesora, a nie w RAM-ie.
+static – zachowuje wartość zmiennej między wywołaniami funkcji lub ogranicza widoczność globalną do jednego pliku.
+extern – informuje, że zmienna lub funkcja jest zdefiniowana w innym pliku.
+_Thread_local (od C11) – zmienna unikalna dla każdego wątku.
+Function Specifiers
+inline – sugestia dla kompilatora, by wstawiał kod funkcji bezpośrednio w miejsce jej wywołania (zamiast skakać do niej w pamięci).
+_Noreturn (od C11) – informacja, że funkcja nigdy nie wraca do miejsca wywołania (np. funkcja kończąca program lub wchodząca w nieskończoną pętlę).
+typeof - uzywa tego samego typu w nowej deklaracji. to znak dla kompilatora ze kopiuje istniejacy typ do nowego.
