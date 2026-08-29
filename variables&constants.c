@@ -109,6 +109,7 @@ long long int
 long double
 long long double
 short
+//
 int8_t i8
 ...
 int8_t
@@ -133,6 +134,7 @@ uint_fast8_t
 ...
 uintmax_t
 uintptr_t
+//
 uchar_t ui8_fast;
 uchar8_t ui8;
 ...
@@ -163,21 +165,26 @@ char_fast8_t ui8_fast;
 char_fast*_t i8_fast_least;
 ...
 wchar_t
-
+//
 auto // Automatic storage duration (C) or type deduction (C++11).
 register // Obsolete hint to store variable in a CPU register (removed in C++17)
 static // Gives static storage duration and internal linkage (file scope) or class-wide scope.
 extern // Declares a variable with external linkage, defined elsewhere.
+extern const volatile int real_time_clock; //
 const // Declares a read‑only (immutable) variable.
 const int 
 constexpr // Specifies that a value/function must be evaluated at compile time (C++11).
-constexpr double ...
+constexpr double // 
+constexpr unsigned int uint_max = -1U; //
+constexpr _Decimal32 small = DEC64_TRUE_MIN * 0; // constraint violation
+constexpr char8_t u8string[] = { u8"\xFF", }; //
 consteval ... // Declares an immediate function, called only at compile time (C++20).
 constinit ... // Asserts that a variable is initialized at compile time (C++20).
 constexpr pointers ... *pointer = &adress of variable ... *pointer
 constexpr atomic types ...
 constexpr volatile types ...
 constexpr restrict pointers ... *pointer = &adress of variable ... *pointer
+constexpr struct // 
 volatile // Prevents compiler optimizations; value may change unexpectedly (hardware, interrupts).
 volatile struct 
 volatile int
@@ -213,23 +220,35 @@ ptrdiff_t // Signed integer type for the result of subtracting two pointers.
 
 
 
-Type Specifiers
+// Type Specifiers
 Podstawowe: char, int, float, double, void.
 Znakowe i wielkościowe: signed, unsigned, short, long.
 Złożone i własne: struct, union, enum, typedef.
 Nowsze standardy (C99+): _Bool (w nagłówku jako bool), _Complex, _Atomic.
-Type Qualifiers
+// Type Qualifiers
 const – oznacza, że wartość jest tylko do odczytu (Twoja konstanta).
 volatile – informuje kompilator, że wartość może zmienić się nagle (np. przez sprzęt), więc kompilator nie może jej optymalizować.
 restrict (od C99) – wskazówka dla kompilatora, że dany wskaźnik jest jedynym, który odnosi się do danego obszaru pamięci (pomaga w optymalizacji).
 _Atomic (od C11) – oznacza, że operacje na zmiennej są niepodzielne (współbieżność).
-Storage Class Specifiers
+// Storage Class Specifiers (auto, constexpr, extern, register, static, thread_local, typedef)
 auto – domyślna zmienna lokalna na stosie (rzadko używane słowo kluczowe).
 register – sugestia dla kompilatora, by trzymać zmienną w rejestrze procesora, a nie w RAM-ie.
 static – zachowuje wartość zmiennej między wywołaniami funkcji lub ogranicza widoczność globalną do jednego pliku.
 extern – informuje, że zmienna lub funkcja jest zdefiniowana w innym pliku.
 _Thread_local (od C11) – zmienna unikalna dla każdego wątku.
-Function Specifiers
+// Function Specifiers
 inline – sugestia dla kompilatora, by wstawiał kod funkcji bezpośrednio w miejsce jej wywołania (zamiast skakać do niej w pamięci).
 _Noreturn (od C11) – informacja, że funkcja nigdy nie wraca do miejsca wywołania (np. funkcja kończąca program lub wchodząca w nieskończoną pętlę).
 typeof - uzywa tego samego typu w nowej deklaracji. to znak dla kompilatora ze kopiuje istniejacy typ do nowego.
+
+thread_local may appear with static or extern,
+auto may appear with all the others except typedef, and
+constexpr may appear with auto, register, or static.
+
+[[deprecated]] void f [[deprecated]] (void); // valid
+ncs = cs; // valid
+cs = ncs; // violates modifiable lvalue constraint for =
+pi = &ncs.mem; // valid
+pi = &cs.mem; // violates type constraints for =
+pci = &cs.mem; // valid
+pi = a[0]; // invalid: a[0] has type "const int *"
