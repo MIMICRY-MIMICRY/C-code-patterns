@@ -2,11 +2,10 @@ alignas  alignof
 do   while  switch  else  true  break  false  for  case  if  continue  goto  return  default
 int  long  double  bool  char float
 struct  enum  typedef  typeof  typeof_unqual  union  static  static_assert
-_Atomic _BitInt _Complex  _Decimal128  _Decimal32  _Decimal64  _Generic  _Imaginary  
+_Atomic _BitInt _Complex  _Decimal128  _Decimal32  _Decimal64  _Generic  _Imaginary  inline  _Noreturn
 auto  register  extern  restrict  thread_local  nullptr  const  constexpr  volatile
 signed  unsigned  short  sizeof 
 void  
-inline  _Noreturn
 
 Keyword  Alternative Spelling
 alignas  _Alignas
