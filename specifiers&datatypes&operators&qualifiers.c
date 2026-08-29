@@ -90,6 +90,7 @@ time_t //
 thread_local //
 union // The value of at most one members can be stored in a union at any one time. Struct prawie = union (tylko inaczej).
 unsigned // Przechowywanie wartosci ujemnych.
+///////////////////////////////////////////////
 unsigned char //
 uchar_t //
 uchar_t ui8_fast; //
@@ -122,6 +123,7 @@ char_fast8_t ui8_fast; //
 char_fast*_t i8_fast_least; //
 ...
 wchar_t //
+////////////////////////////////
 uint //
 uint8_t u8; //
 uint8_t //
@@ -132,10 +134,12 @@ uint_least8_t ui8_least; //
 uint_least16_t //
 uint_least32_t //
 uint_least64_t //
+uint_least*_t ui8_least //
 uint_fast8_t ui8_fast; //
 uint_fast16_t //
 uint_fast32_t //
 uint_fast64_t //
+uint_fast*_t ui8_fast //
 uintmax_t //
 uintptr_t //
 int8_t i8 //
@@ -150,6 +154,7 @@ int_fast8_t //
 ...
 int_fast*_t //
 intptr_t //
+///////////////////////////
 uint //
 uint8_t //
 ...
@@ -159,6 +164,7 @@ uint_least8_t //
 ...
 uint_least*_t //
 uint_fast8_t //
+uint_fast*_t //
 ...
 void // Typ ktory nie zwraca zadnej wartosci. Tylko wykonuje.
 volatile // Wylacza optymalizacje. Czas trwania jest wydluzony.
