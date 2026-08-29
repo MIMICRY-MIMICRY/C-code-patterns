@@ -1,0 +1,34 @@
+alignas  do   int  struct  while
+alignof  double  long  switch  _Atomic
+auto  else  nullptr  thread_local  _BitInt
+bool  enum  register  true  _Complex
+break  extern  restrict  typedef  _Decimal128
+case  false  return  typeof  _Decimal32
+char  float  short  typeof_unqual  _Decimal64
+const  for  signed  union  _Generic
+constexpr  goto  sizeof  unsigned  _Imaginary
+continue  if  static  void  _Noreturn
+default  inline  static_assert  volatile
+
+Keyword  Alternative Spelling
+alignas  _Alignas
+alignof  _Alignof
+bool  _Bool
+static_assert  _Static_assert
+thread_local  _Thread_local
+
+specifiers fundamental: int float double long bool char
+specifiers character and size: signed unsigned long short
+specifiers complex and own: struct, union, enum, typedef
+specifiers modern standards C99+: _Bool, _Complex, _Atomic
+
+qualifiers: 
+const // 
+constexpr // 
+consteval // Declares an immediate function, called only at compile time (C++20).
+constinit // Asserts that a variable is initialized at compile time (C++20).
+volatile // Prevents compiler optimizations; value may change unexpectedly (hardware, interrupts).
+
+storage class specifiers: auto
+
+function specifiers: inline
