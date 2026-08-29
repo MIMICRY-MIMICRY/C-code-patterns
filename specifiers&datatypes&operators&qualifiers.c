@@ -39,22 +39,22 @@ goto //
 if //
 inline // Compiler can and usually do ignore presence or absence (inline specifier) for the purpose of optimization. Avoiding the overhead of a function call - replace call with its body. 
 int //
-int8_t i8 //
+int8_t i8; //
 int8_t //
 int16_t //
 int32_t //
 int64_t //
-intmax_t //
-int_least8_t //
+intmax_t i8_max; //
+int_least8_t i8_least; //
 int_least16_t //
 int_least32_t //
 int_least64_t //
 int_least*_t //
-int_fast8_t //
+int_fast8_t i8_fast; //
 int_fast16_t //
 int_fast32_t //
 int_fast64_t //
-int_fast*_t //
+int_fast*_t i8_fast; //
 intptr_t //
 long // will doing longer default structures.
 long double //
@@ -124,16 +124,16 @@ char_fast*_t i8_fast_least; //
 ...
 wchar_t //
 uint //
-uint8_t u8 //
+uint8_t u8; //
 uint8_t //
 uint16_t //
 uint32_t //
 uint64_t //
-uint_least8_t //
+uint_least8_t ui8_least; //
 uint_least16_t //
 uint_least32_t //
 uint_least64_t //
-uint_fast8_t //
+uint_fast8_t ui8_fast; //
 uint_fast16_t //
 uint_fast32_t //
 uint_fast64_t //
