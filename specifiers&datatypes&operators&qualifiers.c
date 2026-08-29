@@ -1,6 +1,6 @@
 auto // allowed only for objects declared at block scope. Defaults - automatic storage duration & no linkage.
-alignof // 
-alignas //
+alignof // Complete object types have alignment requirements which place restrictions on the addresses at which objects of that type may be allocated. 
+alignas // specifier can only be used when declaring objects that are not bit-fields, and don't have the register storage class. It cannot be used in function parameter declarations, and cannot be used in a typedef.
 break // the enclosing loop or switch
 bool // Holding the two value true & false. 0.5 valuates to true.
 case // Executed according to an integral value.
@@ -11,25 +11,25 @@ char16_t // UTF-16 unsigned integer type
 char32_t // UTF-32 unsigned integer type
 const // placed read-only memory by the compiler. If the address of a const never taken - not be stored at all. Non-const (converted)-> pointer const (same & compatible type)
 continue // introduce to next step of loop
-clock_t //
+clock_t // (described later in this subclause) that is the number per second of the value returned by the clock function;
 constexpr double // Two compatible types compile time.
 consteval // Declares a function or function template to be an immediate function. (directly or indirectly) produce a compile time constant expression. An immediate function is a constexpr function, subject to its requirements as the case may be.
 constinit // Declares a variable with static or thread storage duration. Be applied to structured binding declarations. Is also applied to the uniquely-named variable introduced by the declaration.
 constexpr // Linkage appropraite to its declarations & exist at runtime to its address taken. Compiler use -> any other constant expression. Is checked at compile time. Float-point -> evaluated float-point envinroment.
-constexpr pointers //
-constexpr atomic types //
-constexpr volatile types //
-constexpr restrict pointers //
+constexpr pointers // 
+constexpr atomic types // 
+constexpr volatile types // wylacza optymalizacje podczas kompilacji poniewaz moze sie zmienic wartosc w kazdej chwili
+constexpr restrict pointers // uzywa sie podczas kompilacji ale moze byc zignorowane przez kompilator jezeli nie bedzie uzyte
 default // 
 do //
 double // Declaration of two types compatible. 
-double _Complex //
-double const //
+double _Complex // 
+double const // 
 double long //
 double long long //
 decltype(auto) //
 else //
-enum //
+enum // nadanie indeksu kazdemu elementowi
 extern // Static duration and external linkage (unless already declared internal). Used with variable & function declaration in both file and block scope. Declared remains internal. Otherwise no-linkage & no scope -> linkage is external.
 extern const volatile int real_time_clock; // 
 float //
@@ -71,14 +71,13 @@ size_t //
 signed //
 signed char
 sizeof // return the size in bytes. 
-static //
-struct //
-switch //
+struct // A struct is a type consisting of a sequence of members whose storage is allocated in an ordered sequence (as opposed to union, which is a type consisting of a sequence of members whose storage overlaps).
+switch // 
 std::nullptr_t //
 std::byte
-static //
-static_assert //
-static inline //
+static // A static variable inside a function keeps its value between invocations. A static global variable or function is "seen" only in the file in which it's declared.
+static_assert // 
+static inline // 
 ssize_t //
 sig_atomic_t //
 scanf // 
@@ -175,6 +174,7 @@ _Alignof // compiler gcc specific extensions
 _Atomic // compiler gcc specific extensions
 _Bool b; // compiler gcc specific extensions
 _BitInt // compiler gcc specific extensions
+_Complex // Complex floating types model the mathematical complex number, that is the numbers that can be written as a sum of a real number and a real number multiplied by the imaginary unit: a + bi
 _Decimal32 // compiler gcc specific extensions
 _Decimal64 // compiler gcc specific extensions
 _Decimal128 // compiler gcc specific extensions
