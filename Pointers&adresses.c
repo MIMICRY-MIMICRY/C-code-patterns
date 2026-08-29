@@ -8,3 +8,4 @@ variable->variable
 variable->variable->variable
 variable->variable->func(variable)
 *pointer=&adress->variable
+dp = &(s2->d[0]);
