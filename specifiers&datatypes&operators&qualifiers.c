@@ -31,6 +31,7 @@ decltype(auto) //
 else //
 enum //
 extern // Static duration and external linkage (unless already declared internal). Used with variable & function declaration in both file and block scope. Declared remains internal. Otherwise no-linkage & no scope -> linkage is external.
+extern const volatile int real_time_clock; // 
 float //
 float _Complex //
 for //
