@@ -167,6 +167,9 @@ char_fast*_t i8_fast_least;
 wchar_t
 //
 auto // Automatic storage duration (C) or type deduction (C++11).
+auto p = (struct { int x; } *)0; //
+auto p = (struct s { int x; } *)0; //
+auto alignas (struct s *) x = 0; //
 register // Obsolete hint to store variable in a CPU register (removed in C++17)
 static // Gives static storage duration and internal linkage (file scope) or class-wide scope.
 extern // Declares a variable with external linkage, defined elsewhere.
@@ -178,12 +181,12 @@ constexpr double //
 constexpr unsigned int uint_max = -1U; //
 constexpr _Decimal32 small = DEC64_TRUE_MIN * 0; // constraint violation
 constexpr char8_t u8string[] = { u8"\xFF", }; //
-consteval ... // Declares an immediate function, called only at compile time (C++20).
-constinit ... // Asserts that a variable is initialized at compile time (C++20).
-constexpr pointers ... *pointer = &adress of variable ... *pointer
-constexpr atomic types ...
-constexpr volatile types ...
-constexpr restrict pointers ... *pointer = &adress of variable ... *pointer
+consteval // Declares an immediate function, called only at compile time (C++20).
+constinit // Asserts that a variable is initialized at compile time (C++20).
+constexpr pointers *pointer = &adress of variable ... *pointer
+constexpr atomic types
+constexpr volatile types
+constexpr restrict pointers *pointer = &adress of variable ... *pointer
 constexpr struct // 
 volatile // Prevents compiler optimizations; value may change unexpectedly (hardware, interrupts).
 volatile struct 
@@ -191,7 +194,6 @@ volatile int
 volatile const int
 restrict // C99 qualifier; promises that the pointer does not alias others (optimisation hint).
 enum // Defines an enumerated type with a set of named constants.
-
 signed // Explicitly allows negative values for integral types (default for int).
 unsigned // Disallows negative values; range starts at 0.
 unsigned int
