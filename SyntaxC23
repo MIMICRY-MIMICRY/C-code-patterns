@@ -1,14 +1,12 @@
-alignas  do   int  struct  while
-alignof  double  long  switch  _Atomic
-auto  else  nullptr  thread_local  _BitInt
-bool  enum  register  true  _Complex
-break  extern  restrict  typedef  _Decimal128
-case  false  return  typeof  _Decimal32
-char  float  short  typeof_unqual  _Decimal64
-const  for  signed  union  _Generic
-constexpr  goto  sizeof  unsigned  _Imaginary
-continue  if  static  void  _Noreturn
-default  inline  static_assert  volatile
+alignas  alignof  
+do   while  switch  else  true  break  false  for  case  if  continue  goto  return  default
+int  long  double  bool  char float
+struct  enum  typedef  typeof  typeof_unqual  union  static  static_assert
+_Atomic _BitInt _Complex  _Decimal128  _Decimal32  _Decimal64  _Generic  _Imaginary  
+auto  register  extern  restrict  thread_local  nullptr  const  constexpr  volatile
+signed  unsigned  short  sizeof 
+void  
+inline  _Noreturn
 
 Keyword  Alternative Spelling
 alignas  _Alignas
