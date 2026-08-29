@@ -178,6 +178,8 @@ static static_assert signed int float double long bool char variable = variable;
 static static_assert signed int float double long bool char variable = function();
 static static_assert unsigned int float double long bool char variable = variable;
 static static_assert unsigned int float double long bool char variable = function();
+static inline bool function(struct name *pointer) {return true;};
+static inline void function(struct name *pointer) {};
 typedef 
 typeof 
 typeof_unqual 
