@@ -1,78 +1,10 @@
 specifier memory control _ specifier type _ constant type qualificator _ variable ->
-auto int ... float double long bool char ... signed & unsigned & short + void & sizeof
-register int ... float double long bool char ... signed & unsigned & short + void & sizeof
-static int ... float double long bool char ... signed & unsigned & short + void & sizeof
-extern int ... float double long bool char ... signed & unsigned & short + void & sizeof
-
-const int ... float double long bool char ... signed & unsigned & short + void & sizeof
-constexpr int ... float double long bool char ... signed & unsigned & short + void & sizeof
-constexpr double ...
-consteval ...
-constinit ...
-constexpr pointers ... *pointer = &adress of variable ... *pointer
-constexpr atomic types ...
-constexpr volatile types ...
-constexpr restrict pointers ... *pointer = &adress of variable ... *pointer
-volatile int ... float double long bool char ... signed & unsigned & short + void & sizeof
-restrict int ... float double long bool char ... signed & unsigned & short + void & sizeof
-enum int ... float double long bool char ... signed & unsigned & short + void & sizeof
 
 int float double long bool char
-long double
 long double _Complex
-double long long
-
-signed & unsigned & short int ... float double long bool char
-signed char
-
-auto
-...
-const
-...
-typeof ... void int ... float double long bool char ... signed & unsigned & short
-typeof_unqual ... void int ... float double long bool char ... signed & unsigned & short
-typedef ... void int ... float double long bool char ... signed & unsigned & short
-sizeof ... void int ... float double long bool char ... signed & unsigned & short
-
-void int ... float double long bool char ... signed & unsigned & short ...
-
-inline auto ... const ... typeof ... void ... signed & unsigned & short int ... float double long bool char
-
-nullptr
-enum
-
-void & sizeof int signed & unsigned & short & double & long & long
-void & sizeof float signed & unsigned & short & double & long & long
-void & sizeof bool
-void & sizeof char short & long & long
-
-union auto const typeof int ... float double long bool char ... signed & unsigned & short
-
-struct ...
-
-static ...
-static_assert ...
-static inline ...
 
 size_t ...
 ssize_t ...
-
-auto ... const ... void int8_t i8
-auto ... const ... void int8_t ... intmax_t
-auto ... const ... void int_least8_t ...
-auto ... const ... void int_least*_t
-auto ... const ... void int_fast8_t ... int_fast*_t
-auto ... const ... void intptr_t
-auto ... const ... void nullptr *pointer = &adress of variable
-auto ... const ... void uchar_t
-auto ... const ... void uint
-auto ... const ... void uint8_t u8 ...
-auto ... const ... void uint_least8_t
-auto ... const ... void uint_fast8_t
-uintmax_t
-uintptr_t
-uint_least*_t
-uchar_t
 
 typedef typeof((int*)nullptr - (int*)nullptr) ptrdiff_t;
 
@@ -102,12 +34,16 @@ double long
 double long long
 bool
 char
+signed char
+unsigned int
+unsigned long int
+unsigned long long int
+unsigned char
+unsigned _BitInt(N)
 long
 long long
 long int
 long long int
-long double
-long long double
 short
 //
 int8_t i8
@@ -166,6 +102,7 @@ char_fast*_t i8_fast_least;
 ...
 wchar_t
 //
+auto variable = value, (function())(variable)
 auto // Automatic storage duration (C) or type deduction (C++11).
 auto p = (struct { int x; } *)0; //
 auto p = (struct s { int x; } *)0; //
@@ -205,6 +142,10 @@ typedef // Creates an alias for an existing type.
 sizeof // Compile‑time operator returning size in bytes of a type/object.
 union // A type where members share the same memory location.
 struct // A composite type with separate memory for each member.
+struct s {int i; const int ci;};
+struct s s;
+const struct s cs;
+volatile struct s vs;
 static ... // General placeholder for static applied to variables, functions, or members.
 static_assert ... // Compile‑time assertion; fails if condition is false (C++11/C11).
 static inline ... // Inline function with internal linkage (local to translation unit).
@@ -220,6 +161,27 @@ void // Represents “no type” — used for functions returning nothing or gen
 ptrdiff_t // Signed integer type for the result of subtracting two pointers.
 
 
+variable = value;
+variable = variable;
+variable = function();
+variable alignas(0);
+variable alignas(8);
+variable alignas(float);
+variable alignas(struct_float);
+variable alignas(alignof(8));
+variable alignof(max_align_t);
+auto thread_local register extern restrict const constexpr volatile static variable = variable;
+auto thread_local register extern restrict const constexpr volatile static variable = function(&address; variable->variable;);
+nullptr static variable = variable;
+nullptr static variable = function(&address, variable->variable;);
+static static_assert signed int float double long bool char variable = variable;
+static static_assert signed int float double long bool char variable = function();
+static static_assert unsigned int float double long bool char variable = variable;
+static static_assert unsigned int float double long bool char variable = function();
+typedef 
+typeof 
+typeof_unqual 
+sizeof 
 
 
 // Type Specifiers
@@ -227,7 +189,7 @@ Podstawowe: char, int, float, double, void.
 Znakowe i wielkościowe: signed, unsigned, short, long.
 Złożone i własne: struct, union, enum, typedef.
 Nowsze standardy (C99+): _Bool (w nagłówku jako bool), _Complex, _Atomic.
-// Type Qualifiers
+// Type Qualifiers (const, constexpr, volatile, restrict, _Atomic)
 const – oznacza, że wartość jest tylko do odczytu (Twoja konstanta).
 volatile – informuje kompilator, że wartość może zmienić się nagle (np. przez sprzęt), więc kompilator nie może jej optymalizować.
 restrict (od C99) – wskazówka dla kompilatora, że dany wskaźnik jest jedynym, który odnosi się do danego obszaru pamięci (pomaga w optymalizacji).
@@ -238,7 +200,7 @@ register – sugestia dla kompilatora, by trzymać zmienną w rejestrze procesor
 static – zachowuje wartość zmiennej między wywołaniami funkcji lub ogranicza widoczność globalną do jednego pliku.
 extern – informuje, że zmienna lub funkcja jest zdefiniowana w innym pliku.
 _Thread_local (od C11) – zmienna unikalna dla każdego wątku.
-// Function Specifiers
+// Function Specifiers (inline, _Noreturn, typeof, typeof_unqual)
 inline – sugestia dla kompilatora, by wstawiał kod funkcji bezpośrednio w miejsce jej wywołania (zamiast skakać do niej w pamięci).
 _Noreturn (od C11) – informacja, że funkcja nigdy nie wraca do miejsca wywołania (np. funkcja kończąca program lub wchodząca w nieskończoną pętlę).
 typeof - uzywa tego samego typu w nowej deklaracji. to znak dla kompilatora ze kopiuje istniejacy typ do nowego.
