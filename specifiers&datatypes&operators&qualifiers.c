@@ -25,43 +25,43 @@ do //
 double // Declaration of two types compatible. 
 double _Complex //
 double const //
-double long
-double long long
+double long //
+double long long //
 decltype(auto) //
 else //
 enum //
 extern // Static duration and external linkage (unless already declared internal). Used with variable & function declaration in both file and block scope. Declared remains internal. Otherwise no-linkage & no scope -> linkage is external.
 float //
-float _Complex
-for
+float _Complex //
+for //
 goto //
-if
+if //
 inline // Compiler can and usually do ignore presence or absence (inline specifier) for the purpose of optimization. Avoiding the overhead of a function call - replace call with its body. 
 int //
-int8_t i8
-int8_t
-int16_t
-int32_t
-int64_t
-intmax_t
-int_least8_t
-int_least16_t
-int_least32_t
-int_least64_t
-int_least*_t
-int_fast8_t
-int_fast16_t
-int_fast32_t
-int_fast64_t
-int_fast*_t
-intptr_t
+int8_t i8 //
+int8_t //
+int16_t //
+int32_t //
+int64_t //
+intmax_t //
+int_least8_t //
+int_least16_t //
+int_least32_t //
+int_least64_t //
+int_least*_t //
+int_fast8_t //
+int_fast16_t //
+int_fast32_t //
+int_fast64_t //
+int_fast*_t //
+intptr_t //
 long // will doing longer default structures.
-long double
+long double //
 long double _Complex
 nullptr // non-lvalue constant can be converted to a pointer types or bool.
-off_t
-ptrdiff_t
-printf
+off_t //
+ptrdiff_t //
+printf //
 register // Allowed for declared at block scope including func parameter lists. Automatic storage duration & no linkage. Additionaly hints the optimizer to store the value of this variable in the cpu register if possible. Cannot address-of operator & alignas & register arrays not (convertible) to pointers
 return // Zwraca wartosci
 restrict // Compiler is free to ignore any or all aliasing implications "uses restrict". Avoid restrict-qualified pointers are not violated.
@@ -73,42 +73,98 @@ sizeof // return the size in bytes.
 static //
 struct //
 switch //
-std::nullptr_t
+std::nullptr_t //
 std::byte
 static //
 static_assert //
 static inline //
 ssize_t //
 sig_atomic_t //
-scanf
+scanf // 
 type //
 typedef // cannot be static or extern.
 typeof // return name data type of operand. Without conversions are applied to expression.
+// Działa jako operator czasu kompilacji. Pobiera wyrażenie lub nazwę typu i "zwraca" odpowiadający mu typ. int, char, double)
 typeof_unqual // 
 time_t //
-thread_local
+thread_local //
 union // The value of at most one members can be stored in a union at any one time. Struct prawie = union (tylko inaczej).
 unsigned // Przechowywanie wartosci ujemnych.
 unsigned char //
 uchar_t //
+uchar_t ui8_fast; //
+uchar8_t ui8; //
+...
+uchar8_t u8 //
+...
+uchar_least_t ui8_least; //
+...
+uchar_least8_t ui8_least; //
+...
+uchar_least*_t ui8_least; //
+uchar_fast_t ui8_fast; //
+...
+uchar_fast8_t ui8_fast; //
+...
+uchar_fast*_t ui8_fast; //
+ucharmax_t ui8_max; //
+char8_t //
+...
+char8_t i8 //
+...
+char_least_t i8_least; //
+...
+char_least8_t i8_least; //
+...
+char_least*_t i8_least; //
+char_fast8_t ui8_fast; //
+...
+char_fast*_t i8_fast_least; //
+...
+wchar_t //
 uint //
 uint8_t u8 //
-uint8_t
-uint16_t
-uint32_t
-uint64_t
-uint_least8_t
-uint_least16_t
-uint_least32_t
-uint_least64_t
-uint_fast8_t
-uint_fast16_t
-uint_fast32_t
-uint_fast64_t
-uintmax_t
-uintptr_t
+uint8_t //
+uint16_t //
+uint32_t //
+uint64_t //
+uint_least8_t //
+uint_least16_t //
+uint_least32_t //
+uint_least64_t //
+uint_fast8_t //
+uint_fast16_t //
+uint_fast32_t //
+uint_fast64_t //
+uintmax_t //
+uintptr_t //
+int8_t i8 //
+...
+int8_t //
+...
+intmax_t //
+int_least8_t //
+...
+int_least*_t //
+int_fast8_t //
+...
+int_fast*_t //
+intptr_t //
+uint //
+uint8_t //
+...
+uint8_t u8 //
+...
+uint_least8_t //
+...
+uint_least*_t //
+uint_fast8_t //
+...
 void // Typ ktory nie zwraca zadnej wartosci. Tylko wykonuje.
 volatile // Wylacza optymalizacje. Czas trwania jest wydluzony.
+volatile int //
+volatile const int //
+volatile struct //
 while //
 wchar_t //
 __attribute__ // compiler gcc specific extensions
@@ -147,59 +203,59 @@ _Thread_local // compiler gcc specific extensions
 %lu // unsigned int or unsigned long
 %li or %lid // Long long
 %llu // unsigned long long
-atomic_bool	_Atomic _Bool
-atomic_char	_Atomic char
-atomic_schar	_Atomic signed char
-atomic_uchar	_Atomic unsigned char
-atomic_short	_Atomic short
-atomic_ushort	_Atomic unsigned short
-atomic_int	_Atomic int
-atomic_uint	_Atomic unsigned int
-atomic_long	_Atomic long
-atomic_ulong	_Atomic unsigned long
-atomic_llong	_Atomic long long
-atomic_ullong	_Atomic unsigned long long
-atomic_char16_t	_Atomic char16_t
-atomic_char32_t	_Atomic char32_t
-atomic_wchar_t	_Atomic wchar_t
-atomic_int_least8_t	_Atomic int_least8_t
-atomic_uint_least8_t	_Atomic uint_least8_t
-atomic_int_least16_t	_Atomic int_least16_t
-atomic_uint_least16_t	_Atomic uint_least16_t
-atomic_int_least32_t	_Atomic int_least32_t
-atomic_uint_least32_t	_Atomic uint_least32_t
-atomic_int_least64_t	_Atomic int_least64_t
-atomic_uint_least64_t	_Atomic uint_least64_t
-atomic_int_fast8_t	_Atomic int_fast8_t
-atomic_uint_fast8_t	_Atomic uint_fast8_t
-atomic_int_fast16_t	_Atomic int_fast16_t
-atomic_uint_fast16_t	_Atomic uint_fast16_t
-atomic_int_fast32_t	_Atomic int_fast32_t
-atomic_uint_fast32_t	_Atomic uint_fast32_t
-atomic_int_fast64_t	_Atomic int_fast64_t
-atomic_uint_fast64_t	_Atomic uint_fast64_t
-atomic_intptr_t	_Atomic intptr_t
-atomic_uintptr_t	_Atomic uintptr_t
-atomic_size_t	_Atomic size_t
-atomic_ptrdiff_t	_Atomic ptrdiff_t
-atomic_intmax_t	_Atomic intmax_t
-atomic_uintmax_t	_Atomic uintmax_t
-atomic_bool	ATOMIC_BOOL_LOCK_FREE
-atomic_char	ATOMIC_CHAR_LOCK_FREE
-atomic_char16_t	ATOMIC_CHAR16_T_LOCK_FREE
-atomic_char32_t	ATOMIC_CHAR32_T_LOCK_FREE
-atomic_wchar_t	ATOMIC_WCHAR_T_LOCK_FREE
-atomic_short	ATOMIC_SHORT_LOCK_FREE
-atomic_int	ATOMIC_INT_LOCK_FREE
-atomic_long	ATOMIC_LONG_LOCK_FREE
-atomic_llong	ATOMIC_LLONG_LOCK_FREE
-atomic_intptr_t	ATOMIC_POINTER_LOCK_FREE
-memory_order_seq_cst	Sequential Consistency
-memory_order_acq_rel	Acquire/Release
-memory_order_release	Release
-memory_order_acquire	Acquire
-memory_order_consume	Consume
-memory_order_relaxed	Relaxed
+atomic_bool	_Atomic _Bool //
+atomic_char	_Atomic char //
+atomic_schar	_Atomic signed char //
+atomic_uchar	_Atomic unsigned char //
+atomic_short	_Atomic short //
+atomic_ushort	_Atomic unsigned short //
+atomic_int	_Atomic int //
+atomic_uint	_Atomic unsigned int //
+atomic_long	_Atomic long //
+atomic_ulong	_Atomic unsigned long //
+atomic_llong	_Atomic long long //
+atomic_ullong	_Atomic unsigned long long //
+atomic_char16_t	_Atomic char16_t //
+atomic_char32_t	_Atomic char32_t //
+atomic_wchar_t	_Atomic wchar_t //
+atomic_int_least8_t	_Atomic int_least8_t //
+atomic_uint_least8_t	_Atomic uint_least8_t //
+atomic_int_least16_t	_Atomic int_least16_t //
+atomic_uint_least16_t	_Atomic uint_least16_t //
+atomic_int_least32_t	_Atomic int_least32_t //
+atomic_uint_least32_t	_Atomic uint_least32_t //
+atomic_int_least64_t	_Atomic int_least64_t //
+atomic_uint_least64_t	_Atomic uint_least64_t //
+atomic_int_fast8_t	_Atomic int_fast8_t //
+atomic_uint_fast8_t	_Atomic uint_fast8_t //
+atomic_int_fast16_t	_Atomic int_fast16_t //
+atomic_uint_fast16_t	_Atomic uint_fast16_t //
+atomic_int_fast32_t	_Atomic int_fast32_t //
+atomic_uint_fast32_t	_Atomic uint_fast32_t //
+atomic_int_fast64_t	_Atomic int_fast64_t //
+atomic_uint_fast64_t	_Atomic uint_fast64_t //
+atomic_intptr_t	_Atomic intptr_t //
+atomic_uintptr_t	_Atomic uintptr_t //
+atomic_size_t	_Atomic size_t //
+atomic_ptrdiff_t	_Atomic ptrdiff_t //
+atomic_intmax_t	_Atomic intmax_t //
+atomic_uintmax_t	_Atomic uintmax_t //
+atomic_bool	ATOMIC_BOOL_LOCK_FREE //
+atomic_char	ATOMIC_CHAR_LOCK_FREE //
+atomic_char16_t	ATOMIC_CHAR16_T_LOCK_FREE //
+atomic_char32_t	ATOMIC_CHAR32_T_LOCK_FREE //
+atomic_wchar_t	ATOMIC_WCHAR_T_LOCK_FREE //
+atomic_short	ATOMIC_SHORT_LOCK_FREE //
+atomic_int	ATOMIC_INT_LOCK_FREE //
+atomic_long	ATOMIC_LONG_LOCK_FREE //
+atomic_llong	ATOMIC_LLONG_LOCK_FREE //
+atomic_intptr_t	ATOMIC_POINTER_LOCK_FREE //
+memory_order_seq_cst	Sequential Consistency //
+memory_order_acq_rel	Acquire/Release //
+memory_order_release	Release //
+memory_order_acquire	Acquire //
+memory_order_consume	Consume //
+memory_order_relaxed	Relaxed //
 0	Never lock-free.
 1	Sometimes lock-free.
 2	Always lock-free.
