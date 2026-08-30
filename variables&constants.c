@@ -170,20 +170,20 @@ variable alignas(float);
 variable alignas(struct_float);
 variable alignas(alignof(8));
 variable alignof(max_align_t);
-auto thread_local register extern restrict const constexpr volatile static variable = variable;
-auto thread_local register extern restrict const constexpr volatile static variable = function(&address; variable->variable;);
-nullptr static variable = variable;
-nullptr static variable = function(&address, variable->variable;);
-static static_assert signed int float double long bool char variable = variable;
-static static_assert signed int float double long bool char variable = function();
-static static_assert unsigned int float double long bool char variable = variable;
-static static_assert unsigned int float double long bool char variable = function();
+auto thread_local register extern restrict const constexpr volatile static signed unsigned short int float double long bool char variable = variable;
+auto thread_local register extern restrict const constexpr volatile static signed unsigned short int float double long bool char variable = function(&address; variable->variable;);
+nullptr static signed unsigned short int float double long bool char variable = variable;
+nullptr static signed unsigned short int float double long bool char variable = function(&address, variable->variable;);
+static static_assert signed unsigned short int float double long bool char variable = variable;
+static static_assert signed unsigned short int float double long bool char variable = function();
 static inline bool function(struct name *pointer) {return true;};
 static inline void function(struct name *pointer) {};
-typedef 
-typeof 
-typeof_unqual 
-sizeof 
+typedef unsigned long ulong;
+typeof float variable;
+typeof_unqual double variable;
+sizeof (float) variable;
+size_t vc = sizeof v;
+size_t vcp = sizeof(v);
 extern bool mirrored_kernelcore;
 void memblock_free_pages(unsigned long pfn, unsigned int order);
 void *memmap_alloc(phys_addr_t size, phys_addr_t align, phys_addr_t min_addr, int nid, bool exact_nid);
@@ -202,6 +202,7 @@ unsigned long start_offset = addr - pa;
 unsigned long nr_pages;
 extern void __shuffle_free_memory(pg_data_t *pgdat);
 static u64 zswap_pool_limit_hit;
+writeback_result = zswap_writeback_entry(entry, swpentry);
 
 
 // Type Specifiers
