@@ -1,10 +1,8 @@
-alignas  alignof  
 do   while  switch  else  true  break  false  for  case  if  continue  goto  return  default
-int  long  double  bool  char float
-struct  enum  typedef  typeof  typeof_unqual  union  static  static_assert
+alignas  alignof  int  long  double  bool  char  float  signed  unsigned  short  sizeof 
+struct  enum  typedef  typeof  typeof_unqual  union
 _Atomic _BitInt _Complex  _Decimal128  _Decimal32  _Decimal64  _Generic  _Imaginary  inline  _Noreturn
-auto  register  extern  restrict  thread_local  nullptr  const  constexpr  volatile
-signed  unsigned  short  sizeof 
+auto  register  extern  restrict  thread_local  nullptr  const  constexpr  volatile  static  static_assert
 void  
 
 Keyword  Alternative Spelling
