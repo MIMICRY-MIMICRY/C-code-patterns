@@ -184,6 +184,19 @@ typedef
 typeof 
 typeof_unqual 
 sizeof 
+extern bool mirrored_kernelcore;
+void memblock_free_pages(unsigned long pfn, unsigned int order);
+void *memmap_alloc(phys_addr_t size, phys_addr_t align, phys_addr_t min_addr, int nid, bool exact_nid);
+void __meminit __init_single_page(struct page *page, unsigned long pfn, unsigned long zone, int nid);
+#define mm_slot_entry(ptr, type, member);
+static void tlb_remove_table_smp_sync(void *arg) {};
+call_rcu(&batch->rcu, tlb_remove_table_rcu);
+seq = READ_ONCE(interval_sub->invalidate_seq);
+is_invalidating = seq == subscriptions->invalidate_seq;
+hlist_for_each_entry_srcu(subscription, &mm->notifier_subscriptions->list, hlist, srcu_read_lock_held(&srcu)) {};
+nodemask_t physnode_mask = numa_nodes_parsed;
+u64 size;
+static inline p4d_t *p4d_alloc_track(struct mm_struct *mm, pgd_t *pgd, unsigned long address, pgtbl_mod_mask *mod_mask) {};
 
 
 // Type Specifiers
