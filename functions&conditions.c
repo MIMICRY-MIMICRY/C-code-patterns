@@ -44,9 +44,13 @@ static int process_vm_rw_single_vec(unsigned long addr,
 				    struct task_struct *task,
 				    int vm_write) {};
 
+static inline struct zpdesc *pfn_zpdesc(unsigned long pfn) {};
+
 const struct cpumask *cpumask_of_node(int node) {};
 
 static void numa_update_cpu(unsigned int cpu, bool remove) {};
+
+static inline void __zpdesc_set_movable(struct zpdesc *zpdesc) {};
 
 constexpr function() {};
 
