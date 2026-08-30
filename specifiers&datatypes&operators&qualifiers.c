@@ -76,8 +76,8 @@ switch //
 std::nullptr_t //
 std::byte
 static // A static variable inside a function keeps its value between invocations. A static global variable or function is "seen" only in the file in which it's declared.
-static_assert // 
-static inline // 
+static_assert // The constant expression shall compare unequal to 0.
+static inline // Visible only in file, replace call only body.
 ssize_t //
 sig_atomic_t //
 scanf // 
