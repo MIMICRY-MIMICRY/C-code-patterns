@@ -32,6 +32,18 @@ static int allocinfo_ioctl_get_next(struct seq_file *m, void __user *arg) {};
 
 static long allocinfo_ioctl(struct file *file, unsigned int cmd, unsigned long __arg) {};
 
+static void mn_itree_inv_end(struct mmu_notifier_subscriptions *subscriptions) {};
+
+static inline p4d_t *p4d_alloc_track(struct mm_struct *mm, pgd_t *pgd, unsigned long address, pgtbl_mod_mask *mod_mask) {};
+
+static int process_vm_rw_single_vec(unsigned long addr,
+				    unsigned long len,
+				    struct iov_iter *iter,
+				    struct page **process_pages,
+				    struct mm_struct *mm,
+				    struct task_struct *task,
+				    int vm_write) {};
+
 const struct cpumask *cpumask_of_node(int node) {};
 
 static void numa_update_cpu(unsigned int cpu, bool remove) {};
@@ -130,6 +142,10 @@ void alokuj(int **ptr); – używany, gdy funkcja ma zmienić adres, na który w
 void wykonaj(int (*operacja)(int, int));
 
 void przetworz(char*, int); – w definicji funkcji nie musisz nazywać wskaźnika, jeśli z niego nie korzystasz.
+
+void tlb_remove_table_sync_rcu(void) {synchronize_rcu();};
+
+tlb_change_page_size(tlb, huge_page_size(hstate_vma(vma)));
 
 funkcja(&zmienna)
 
