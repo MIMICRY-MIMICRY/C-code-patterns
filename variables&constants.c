@@ -201,6 +201,7 @@ unsigned long pa = addr & PAGE_MASK;
 unsigned long start_offset = addr - pa;
 unsigned long nr_pages;
 extern void __shuffle_free_memory(pg_data_t *pgdat);
+static u64 zswap_pool_limit_hit;
 
 
 // Type Specifiers
