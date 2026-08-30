@@ -197,6 +197,10 @@ hlist_for_each_entry_srcu(subscription, &mm->notifier_subscriptions->list, hlist
 nodemask_t physnode_mask = numa_nodes_parsed;
 u64 size;
 static inline p4d_t *p4d_alloc_track(struct mm_struct *mm, pgd_t *pgd, unsigned long address, pgtbl_mod_mask *mod_mask) {};
+unsigned long pa = addr & PAGE_MASK;
+unsigned long start_offset = addr - pa;
+unsigned long nr_pages;
+extern void __shuffle_free_memory(pg_data_t *pgdat);
 
 
 // Type Specifiers
