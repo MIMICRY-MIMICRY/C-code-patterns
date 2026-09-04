@@ -177,6 +177,22 @@ HOST_LFS_CFLAGS := $(shell getconf LFS_CFLAGS 2>/dev/null)
 HOSTCC	= $(LLVM_PREFIX)clang$(LLVM_SUFFIX)
 HOSTCC	= gcc
 
+LINUXINCLUDE    := \
+		-I$(srctree)/arch/$(SRCARCH)/include \
+		-I$(objtree)/arch/$(SRCARCH)/include/generated \
+		-I$(srctree)/include \
+		-I$(objtree)/include \
+		$(USERINCLUDE)
+
+KBUILD_AFLAGS   := -D__ASSEMBLY__ -fno-PIE
+
+KBUILD_CFLAGS :=
+KBUILD_CFLAGS += -fshort-wchar
+KBUILD_CFLAGS += -funsigned-char
+KBUILD_CFLAGS += -fno-common
+KBUILD_CFLAGS += -fno-PIE
+KBUILD_CFLAGS += -fno-strict-aliasing
+
 VARIABLE = $($wildcard %, , , )
 
 PHONY += scripts
