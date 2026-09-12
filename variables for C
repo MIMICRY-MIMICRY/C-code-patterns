@@ -1,0 +1,30 @@
+outb // output byte "8bits"
+inb // input byte "8bits"
+inw // input two bytes "16bits"
+io_wait // 
+
+port //
+val //
+ret //
+
+lba // logical block address, disk sector0-lba0 sector1-lba1 ...
+buffer // to zazwyczaj tablica bajtów lub wskaźnik. ma co najmniej 512 bajtów na każdy odczytywany sektor aby zmiescic wszystkie pobrane dane
+
+ata_wait_bsy //
+ata_wait_drq //
+ata_read_sector //
+
+disk_buffer //
+
+scancode_ascii //
+keyboard_getchar //
+scancode //
+
+terminal_row //
+terminal_column //
+terminal_color //
+VGA_HEIGHT //
+VGA_WIDTH //
+VGA_MEMORY //
+c //
+str //
