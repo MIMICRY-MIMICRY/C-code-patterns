@@ -7,6 +7,18 @@
 <:  :>  <%  %>  %:  %:%:
 
 
+Unary operators
+
+postfix-expression
+++ unary-expression
+-- unary-expression
+unary-operator cast-expression
+sizeof unary-expression
+sizeof ( type-name )
+alignof ( type-name )
+
+unary-operator: one of
+& * + - ~ !
 
 
 [] — Array subscript / indexing operator.
